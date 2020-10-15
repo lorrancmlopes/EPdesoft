@@ -2,7 +2,7 @@ import random
 #definindo o baralho
 baralho52 = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K","A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K","A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K","A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"]
 #Fichas inicias
-fichas = 100
+fichas = [100]
 #inicializar banco, jogador e aposta
 banco = 0
 jogador = 0
@@ -10,19 +10,15 @@ somajog = 0
 somaban = 0
 quantosjogadores = [jogador]
 
-
-
-
-print("Você possui {0} fichas para apostar." .format(fichas))
-n = int(input("Vão jogar 1 ou mais?"))
-def quantosjogador(num):
-    i = 2
-    if n>1:
+#alterando a inicialização para ver quantos vão jogar
+n = int(input("Entre com o numero de jogadore: 1 ou (insira o valor): "))
+if n>1:
+        i = 2
         while i<=n:
             quantosjogadores.append("jogador {0}".format(i))
+            fichas.append(100)
             i += 1
-    return quantosjogadores
-quantosjogador(n) 
+print("Você possui {0} fichas para apostar." .format(fichas))
 aposta = int(input("Quantas fichas quer apostar? "))
 #implementando mais barahos
 quantosbara = int(input("Deseja jogar com 6 ou 8 baralhos?"))
@@ -166,6 +162,8 @@ if aposta<= fichas:
 
     elif somaban >= 10:
         somaban -= 10
+
+
 
     def resultado (somajogador, somabanco, fic, apost):
         if somajogador == somabanco and apostado == "empate":
