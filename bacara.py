@@ -8,9 +8,21 @@ banco = 0
 jogador = 0
 somajog = 0
 somaban = 0
+quantosjogadores = [jogador]
+
+
 
 
 print("Você possui {0} fichas para apostar." .format(fichas))
+n = int(input("Vão jogar 1 ou mais?"))
+def quantosjogador(num):
+    i = 2
+    if n>1:
+        while i<=n:
+            quantosjogadores.append("jogador {0}".format(i))
+            i += 1
+    return quantosjogadores
+quantosjogador(n) 
 aposta = int(input("Quantas fichas quer apostar? "))
 #implementando mais barahos
 quantosbara = int(input("Deseja jogar com 6 ou 8 baralhos?"))
