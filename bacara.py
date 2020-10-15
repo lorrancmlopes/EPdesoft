@@ -8,6 +8,7 @@ banco = 0
 jogador = 0
 somajog = 0
 somaban = 0
+print(baralho52*3)
 
 print("Você possui {0} fichas para apostar." .format(fichas))
 aposta = int(input("Quantas fichas quer apostar? "))
@@ -147,32 +148,38 @@ if aposta<= fichas:
     def resultado (somajogador, somabanco, fic, apost):
         if somajogador == somabanco and apostado == "empate":
             fic += apost*8
+            fic = int(fic)
             print("Seu saldo de fichas é:")
             print(fic)
             return "Empate! Você ganhou!"
         elif somajogador == somabanco and apostado != "empate":
             fic -= apost
+            fic = int(fic)
             print("Seu saldo de fichas é:")
             print(fic)
             return "Empate! Você perdeu!"
         elif somajogador > somabanco and apostado == "jogador":
             fic += apost
+            fic = int(fic)
             print("Seu saldo de fichas é:")
             print(fic)
             return "O jogador venceu! Você ganhou!"
         elif somajogador > somabanco and apostado != "jogador":
             fic -= apost
+            fic = int(fic)
             print("Seu saldo de fichas é:")
             print(fic)
             return "O jogador venceu! Você perdeu!"
         elif somabanco > somajogador and apostado == "banco":
             fic += apost*0.95
+            fic = int(fic)
             print("Seu saldo de fichas é:")
             print(fic)
             return "O banco venceu! Você ganhou!"
         elif somabanco > somajogador and apostado != "banco":
             fic -= apost
             print("Seu saldo de fichas é:")
+            fic = int(fic)
             print(fic)
             return "O banco venceu! Você perdeu!"
 
