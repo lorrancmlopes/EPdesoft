@@ -8,10 +8,20 @@ banco = 0
 jogador = 0
 somajog = 0
 somaban = 0
-print(baralho52*3)
+
 
 print("Você possui {0} fichas para apostar." .format(fichas))
 aposta = int(input("Quantas fichas quer apostar? "))
+#implementando mais barahos
+quantosbara = int(input("Deseja jogar com 6 ou 8 baralhos?"))
+if quantosbara == 1:
+    baralho52 = baralho52
+elif quantosbara == 6:
+    baralho52 = baralho52*6
+elif quantosbara == 8:
+    baralho52 = baralho52*8
+else:
+    print("Não entendi, prosseguiremos com 1 baralho.")
 apostado = input("Aposta no banco, no jogador, ou empate?")
 #limitando a aposta ao numero de fichas disponiveis
 if aposta<= fichas:
