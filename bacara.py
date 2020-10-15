@@ -9,17 +9,23 @@ jogador = 0
 somajog = 0
 somaban = 0
 quantosjogadores = [jogador]
+apostas = []
 
 #alterando a inicialização para ver quantos vão jogar
 n = int(input("Entre com o numero de jogadore: 1 ou (insira o valor): "))
 if n>1:
-        i = 2
-        while i<=n:
-            quantosjogadores.append("jogador {0}".format(i))
-            fichas.append(100)
-            i += 1
-print("Você possui {0} fichas para apostar." .format(fichas))
-aposta = int(input("Quantas fichas quer apostar? "))
+    i = 2
+    while i<=n:
+        quantosjogadores.append("jogador {0}".format(i))
+        fichas.append(100)
+        i += 1
+print("Você(s) possui(em) {0} fichas para apostar(em), respectivamente." .format(fichas))
+if n>=1:
+    i=1
+    while i<=n:
+        salvaaposta = int(input("Entre com a aposta do jogador {0}: ".format(i)))
+        apostas.append(salvaaposta)
+        i += 1
 #implementando mais barahos
 quantosbara = int(input("Deseja jogar com 6 ou 8 baralhos?"))
 if quantosbara == 1:
