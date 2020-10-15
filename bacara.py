@@ -10,6 +10,7 @@ somajog = 0
 somaban = 0
 quantosjogadores = [jogador]
 apostas = []
+apostado = []
 
 #alterando a inicialização para ver quantos vão jogar
 n = int(input("Entre com o numero de jogadore: 1 ou (insira o valor): "))
@@ -19,6 +20,7 @@ if n>1:
         quantosjogadores.append("jogador {0}".format(i))
         fichas.append(100)
         i += 1
+#alterando as apostas
 print("Você(s) possui(em) {0} fichas para apostar(em), respectivamente." .format(fichas))
 if n>=1:
     i=1
@@ -27,7 +29,7 @@ if n>=1:
         apostas.append(salvaaposta)
         i += 1
 #implementando mais barahos
-quantosbara = int(input("Deseja jogar com 6 ou 8 baralhos?"))
+quantosbara = int(input("Deseja(am) jogar com 6 ou 8 baralhos?"))
 if quantosbara == 1:
     baralho52 = baralho52
 elif quantosbara == 6:
@@ -36,9 +38,20 @@ elif quantosbara == 8:
     baralho52 = baralho52*8
 else:
     print("Não entendi, prosseguiremos com 1 baralho.")
-apostado = input("Aposta no banco, no jogador, ou empate?")
+
+#Alterando a aposta no banco ou jogador, ou empate
+if n>=1:
+    i=1
+    while i<=n:
+        em_quem = input("Jogador {0}, aposta no banco, no jogador, ou empate?".format(i))
+        apostado.append(em_quem)
+        i += 1
+
 #limitando a aposta ao numero de fichas disponiveis
-if aposta<= fichas:
+x = True
+if 0 in fichas:
+    x = False
+while x:
     print("O jogo começou!")
     #Cartas do jogador
 
@@ -211,8 +224,6 @@ if aposta<= fichas:
 
     print(resultado(somajog, somaban, fichas, aposta))
 
-else:
-    print("Aposta inválida.")
 
 
 
