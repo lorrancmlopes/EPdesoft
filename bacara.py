@@ -117,6 +117,7 @@ while x:
 
     elif somajog >= 10:
         somajog -= 10
+
     #Cartas do banco
 
     #Carta 1
