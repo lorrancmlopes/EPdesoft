@@ -91,7 +91,10 @@ if n>=1:
 
     #Carta 3
     somajog = valor1jog + valor2jog
+    #criar uma variavel para saber se o jog recebeu uma terceira carta
+    recebeu = False
     if somajog <= 5:
+        recebeu = True
         c = random.randint(0,51)
         carta3jog = baralho52[c]
         print("A carta 3 do jogador é {0}." .format(carta3jog))
@@ -156,7 +159,7 @@ if n>=1:
 
     #Carta 3
     somaban = valor1b + valor2b
-    if somaban <= 5:
+    if somaban <= 5 and recebeu == False:
         f = random.randint(0,51)
         carta3b = baralho52[f]
         print("A carta 3 do banco é {0}." .format(carta3b))
@@ -176,6 +179,9 @@ if n>=1:
         somaban = valor1b + valor2b + valor3b
         if somaban >= 10:
             somaban -= 10
+    elif  recebeu == True and somaban <= 5:
+        
+
 
     elif somaban >= 10:
         somaban -= 10
