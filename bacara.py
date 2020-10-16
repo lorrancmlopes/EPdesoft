@@ -343,11 +343,15 @@ while valido_para_jogar:
                 print("Seu saldo de fichas é:")
                 fichas[contador] = int(fichas[contador])
                 print(fichas[contador])
-                print( "O banco venceu! Você perdeu, jogador {0}!".format(contador))
+                print( "O banco venceu! Você perdeu, jogador {0}!".format(contador+1))
             contador += 1
     #verifica se alguem zerou as fichas
     if 0 in fichas:
             valido_para_jogar = False
+    #pergunta se quer continuar jogando ou não:
+    continuar = input("Continuar o jogo? (sim ou não)")
+    if continuar == "não":
+        valido_para_jogar = False
 
 
 
