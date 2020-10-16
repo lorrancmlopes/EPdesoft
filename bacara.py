@@ -31,6 +31,10 @@ while valido_para_jogar:
         i=1
         while i<=n:
             salvaaposta = int(input("Entre com a aposta do jogador {0}: ".format(i)))
+            if salvaaposta>fichas[i-1]: #verificando se a aposta é válida
+                while salvaaposta>fichas[i-1]:
+                    print("Valor incompatível com o saldo. Tente novamente.")
+                    salvaaposta = int(input("Entre com a aposta do jogador {0}: ".format(i)))
             apostas.append(salvaaposta)
             i += 1
     #implementando mais barahos
