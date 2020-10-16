@@ -1,3 +1,6 @@
+# EP - Design de Software
+# Equipe: Lorran Caetano Machado Lopes & Deus
+# Data: 16/10/2020
 import random
 #definindo o baralho
 baralho52 = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K","A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K","A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K","A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"]
