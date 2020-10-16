@@ -180,14 +180,97 @@ if n>=1:
         if somaban >= 10:
             somaban -= 10
     elif  recebeu == True and somaban <= 5:
-        
-
-
+        if somaban == 0 or somaban == 1 or somaban == 2:
+            if valor3jog == 0 or valor3jog == 1 or valor3jog == 2 or valor3jog == 3 or valor3jog == 4 or valor3jog == 5 or valor3jog == 6 or valor3jog == 7 or valor3jog == 8 or valor3jog == 9:
+                #REGRAS PADRÃO DE VALOR DE CARTA
+                f = random.randint(0,51)
+                carta3b = baralho52[f]
+                print("A carta 3 do banco é {0}." .format(carta3b))
+                if baralho52[f] == 'A':
+                    valor3b = 1
+                elif baralho52[f] == 10:
+                    valor3b = 0
+                elif baralho52[f] == 'J':
+                    valor3b = 0
+                elif baralho52[f] == 'Q':
+                    valor3b = 0
+                elif baralho52[f] == 'K':
+                    valor3b = 0
+                else:
+                    valor3b = baralho52[f]
+                print("O seu valor é {0} ." .format(valor3b))
+                somaban = valor1b + valor2b + valor3b
+                if somaban >= 10:
+                    somaban -= 10
+    elif somaban == 3:
+            if valor3jog == 0 or valor3jog == 1 or valor3jog == 2 or valor3jog == 3 or valor3jog == 4 or valor3jog == 5 or valor3jog == 6 or valor3jog == 7 or valor3jog == 9:
+                #REGRAS PADRÃO DE VALOR DE CARTA
+                f = random.randint(0,51)
+                carta3b = baralho52[f]
+                print("A carta 3 do banco é {0}." .format(carta3b))
+                if baralho52[f] == 'A':
+                    valor3b = 1
+                elif baralho52[f] == 10:
+                    valor3b = 0
+                elif baralho52[f] == 'J':
+                    valor3b = 0
+                elif baralho52[f] == 'Q':
+                    valor3b = 0
+                elif baralho52[f] == 'K':
+                    valor3b = 0
+                else:
+                    valor3b = baralho52[f]
+                print("O seu valor é {0} ." .format(valor3b))
+                somaban = valor1b + valor2b + valor3b
+                if somaban >= 10:
+                    somaban -= 10
+    elif somaban == 4:
+            if valor3jog == 2 or valor3jog == 3 or valor3jog == 4 or valor3jog == 5 or valor3jog == 6 or valor3jog == 7:
+                #REGRAS PADRÃO DE VALOR DE CARTA
+                f = random.randint(0,51)
+                carta3b = baralho52[f]
+                print("A carta 3 do banco é {0}." .format(carta3b))
+                if baralho52[f] == 'A':
+                    valor3b = 1
+                elif baralho52[f] == 10:
+                    valor3b = 0
+                elif baralho52[f] == 'J':
+                    valor3b = 0
+                elif baralho52[f] == 'Q':
+                    valor3b = 0
+                elif baralho52[f] == 'K':
+                    valor3b = 0
+                else:
+                    valor3b = baralho52[f]
+                print("O seu valor é {0} ." .format(valor3b))
+                somaban = valor1b + valor2b + valor3b
+                if somaban >= 10:
+                    somaban -= 10
+    elif somaban == 5:
+            if valor3jog == 4 or valor3jog == 5 or valor3jog == 6 or valor3jog == 7:
+                #REGRAS PADRÃO DE VALOR DE CARTA
+                f = random.randint(0,51)
+                carta3b = baralho52[f]
+                print("A carta 3 do banco é {0}." .format(carta3b))
+                if baralho52[f] == 'A':
+                    valor3b = 1
+                elif baralho52[f] == 10:
+                    valor3b = 0
+                elif baralho52[f] == 'J':
+                    valor3b = 0
+                elif baralho52[f] == 'Q':
+                    valor3b = 0
+                elif baralho52[f] == 'K':
+                    valor3b = 0
+                else:
+                    valor3b = baralho52[f]
+                print("O seu valor é {0} ." .format(valor3b))
+                somaban = valor1b + valor2b + valor3b
+                if somaban >= 10:
+                    somaban -= 10
     elif somaban >= 10:
         somaban -= 10
-
-
-
+    #resultado da partida
     contador = 0
     while contador<n:
         if somajog == somaban and apostado[contador] == "empate":
