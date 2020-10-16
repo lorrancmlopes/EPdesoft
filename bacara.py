@@ -8,7 +8,7 @@ banco = 0
 jogador = 0
 somajog = 0
 somaban = 0
-quantosjogadores = [jogador]
+quantosjogadores = ["jogador 1"]
 apostas = []
 apostado = []
 
@@ -20,6 +20,7 @@ if n>1:
         quantosjogadores.append("jogador {0}".format(i))
         fichas.append(100)
         i += 1
+print(quantosjogadores) #apenas testando se deu certo, apagar dps
 #alterando as apostas
 print("Você(s) possui(em) {0} fichas para apostar(em), respectivamente." .format(fichas))
 if n>=1:
@@ -47,11 +48,7 @@ if n>=1:
         apostado.append(em_quem)
         i += 1
 
-#limitando a aposta ao numero de fichas disponiveis
-x = True
-if 0 in fichas:
-    x = False
-while x:
+
     print("O jogo começou!")
     #Cartas do jogador
 
@@ -185,45 +182,45 @@ while x:
 
 
 
-    def resultado (somajogador, somabanco, fic, apost):
-        if somajogador == somabanco and apostado == "empate":
-            fic += apost*8
-            fic = int(fic)
+    contador = 0
+    while contador<n:
+        if somajog == somaban and apostado[contador] == "empate":
+            fichas[contador] += apostas[contador]*8
+            fichas[contador] = int(fichas[contador])
             print("Seu saldo de fichas é:")
-            print(fic)
-            return "Empate! Você ganhou!"
-        elif somajogador == somabanco and apostado != "empate":
-            fic -= apost
-            fic = int(fic)
+            print(fichas[contador])
+            print( "Empate! Você ganhou, jogador {0}!".format(contador+1))
+        elif somajog == somaban and apostado[contador] != "empate":
+            fichas[contador] -= apostas[contador]
+            fichas[contador] = int(fichas[contador])
             print("Seu saldo de fichas é:")
-            print(fic)
-            return "Empate! Você perdeu!"
-        elif somajogador > somabanco and apostado == "jogador":
-            fic += apost
-            fic = int(fic)
+            print(fichas[contador])
+            print( "Empate! Você perdeu, jogador {0}!".format(contador+1))
+        elif somajog > somaban and apostado[contador] == "jogador":
+            fichas[contador] += apostas[contador]
+            fichas[contador] = int(fichas[contador])
             print("Seu saldo de fichas é:")
-            print(fic)
-            return "O jogador venceu! Você ganhou!"
-        elif somajogador > somabanco and apostado != "jogador":
-            fic -= apost
-            fic = int(fic)
+            print(fichas[contador])
+            print( "O jogador venceu! Você ganhou, jogador {0}!".format(contador+1))
+        elif somajog > somaban and apostado[contador] != "jogador":
+            fichas[contador] -= apostas[contador]
+            fichas[contador] = int(fichas[contador])
             print("Seu saldo de fichas é:")
-            print(fic)
-            return "O jogador venceu! Você perdeu!"
-        elif somabanco > somajogador and apostado == "banco":
-            fic += apost*0.95
-            fic = int(fic)
+            print(fichas[contador])
+            print( "O jogador venceu! Você perdeu, jogador {0}!".format(contador+1))
+        elif somaban > somajog and apostado[contador] == "banco":
+            fichas[contador] += apostas[contador]*0.95
+            fichas[contador] = int(fichas[contador])
             print("Seu saldo de fichas é:")
-            print(fic)
-            return "O banco venceu! Você ganhou!"
-        elif somabanco > somajogador and apostado != "banco":
-            fic -= apost
+            print(fichas[contador])
+            print( "O banco venceu! Você ganhou, jogador {0}!".format(contador+1))
+        elif somaban > somajog and apostado[contador] != "banco":
+            fichas[contador] -= apostas[contador]
             print("Seu saldo de fichas é:")
-            fic = int(fic)
-            print(fic)
-            return "O banco venceu! Você perdeu!"
-
-    print(resultado(somajog, somaban, fichas, aposta))
+            fichas[contador] = int(fichas[contador])
+            print(fichas[contador])
+            print( "O banco venceu! Você perdeu, jogador {0}!".format(contador))
+        contador += 1
 
 
 
