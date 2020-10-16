@@ -341,6 +341,7 @@ while valido_para_jogar:
                 print(fichas[contador])
                 print( "O banco venceu! Você perdeu, jogador {0}!".format(contador))
             contador += 1
+    #verifica se alguem zerou as fichas
     if 0 in fichas:
             valido_para_jogar = False
 
