@@ -3,11 +3,12 @@ import random
 baralho52 = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K","A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K","A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K","A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"]
 #Fichas inicias
 fichas = [100]
-#inicializar banco, jogador e aposta
+#inicializar banco, jogador e aposta, soma do jogador, soma do banco
 banco = 0
 jogador = 0
 somajog = 0
 somaban = 0
+#criação da lista de jogador, de apostas e valor apostado
 quantosjogadores = ["jogador 1"]
 apostas = []
 apostado = []
@@ -20,7 +21,7 @@ if n>1:
         quantosjogadores.append("jogador {0}".format(i))
         fichas.append(100)
         i += 1
-print(quantosjogadores) #apenas testando se deu certo, apagar dps
+
 #alterando as apostas
 print("Você(s) possui(em) {0} fichas para apostar(em), respectivamente." .format(fichas))
 if n>=1:
