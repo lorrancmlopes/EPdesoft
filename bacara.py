@@ -186,6 +186,15 @@ if n>=1:
     while contador<n:
         if somajog == somaban and apostado[contador] == "empate":
             fichas[contador] += apostas[contador]*8
+            #comissão
+            if quantosbara == 1:
+                fichas[contador] -= apostas[contador]*0.1575
+            elif quantosbara == 6:
+                fichas[contador] -= apostas[contador]*0.1444
+            elif quantosbara == 8:
+                fichas[contador] -= apostas[contador]*0.1436
+            else:
+                fichas[contador] -= apostas[contador]*0.1575 #o jogo escolhe 1 aralho caso a pessoa entrar com um num diferente das opções
             fichas[contador] = int(fichas[contador])
             print("Seu saldo de fichas é:")
             print(fichas[contador])
@@ -198,6 +207,15 @@ if n>=1:
             print( "Empate! Você perdeu, jogador {0}!".format(contador+1))
         elif somajog > somaban and apostado[contador] == "jogador":
             fichas[contador] += apostas[contador]
+            #comissão
+            if quantosbara == 1:
+                fichas[contador] -= apostas[contador]*0.0129
+            elif quantosbara == 6:
+                fichas[contador] -= apostas[contador]*0.0124
+            elif quantosbara == 8:
+                fichas[contador] -= apostas[contador]*0.0124
+            else:
+                fichas[contador] -= apostas[contador]*0.0129 #o jogo escolhe 1 aralho caso a pessoa entrar com um num diferente das opções
             fichas[contador] = int(fichas[contador])
             print("Seu saldo de fichas é:")
             print(fichas[contador])
@@ -210,6 +228,15 @@ if n>=1:
             print( "O jogador venceu! Você perdeu, jogador {0}!".format(contador+1))
         elif somaban > somajog and apostado[contador] == "banco":
             fichas[contador] += apostas[contador]*0.95
+            #comissão
+            if quantosbara == 1:
+                fichas[contador] -= apostas[contador]*0.0101
+            elif quantosbara == 6:
+                fichas[contador] -= apostas[contador]*0.0106
+            elif quantosbara == 8:
+                fichas[contador] -= apostas[contador]*0.0106
+            else:
+                fichas[contador] -= apostas[contador]*0.0101 #o jogo escolhe 1 aralho caso a pessoa entrar com um num diferente das opções
             fichas[contador] = int(fichas[contador])
             print("Seu saldo de fichas é:")
             print(fichas[contador])
