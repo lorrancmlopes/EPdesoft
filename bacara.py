@@ -41,7 +41,7 @@ while valido_para_jogar:
             apostas.append(salvaaposta)
             i += 1
     #implementando mais barahos
-    quantosbara = int(input("Deseja(am) jogar com 6 ou 8 baralhos?"))
+    quantosbara = int(input("Deseja(am) jogar com 1, 6 ou 8 baralhos?"))
     if quantosbara == 1:
         baralho52 = baralho52
     elif quantosbara == 6:
@@ -123,12 +123,14 @@ while valido_para_jogar:
                 valor3jog = baralho52[c]
             print("O seu valor é {0} ." .format(valor3jog))
             somajog = valor1jog + valor2jog + valor3jog
-            if somajog >= 10:
+            if somajog >= 20:
+                somajog -= 20
+            elif somajog >= 10:
                 somajog -= 10
-
+        elif somajog >= 20:
+            somajog -= 20
         elif somajog >= 10:
             somajog -= 10
-
         #Cartas do banco
 
         #Carta 1
@@ -188,7 +190,9 @@ while valido_para_jogar:
                 valor3b = baralho52[f]
             print("O seu valor é {0} ." .format(valor3b))
             somaban = valor1b + valor2b + valor3b
-            if somaban >= 10:
+            if somaban >= 20:
+                somaban -= 20
+            elif somaban >= 10:
                 somaban -= 10
         elif  recebeu == True and somaban <= 5:
             if somaban == 0 or somaban == 1 or somaban == 2:
@@ -211,7 +215,9 @@ while valido_para_jogar:
                         valor3b = baralho52[f]
                     print("O seu valor é {0} ." .format(valor3b))
                     somaban = valor1b + valor2b + valor3b
-                    if somaban >= 10:
+                    if somaban >= 20:
+                        somaban -= 20
+                    elif somaban >= 10:
                         somaban -= 10
         elif somaban == 3:
                 if valor3jog == 0 or valor3jog == 1 or valor3jog == 2 or valor3jog == 3 or valor3jog == 4 or valor3jog == 5 or valor3jog == 6 or valor3jog == 7 or valor3jog == 9:
@@ -233,7 +239,9 @@ while valido_para_jogar:
                         valor3b = baralho52[f]
                     print("O seu valor é {0} ." .format(valor3b))
                     somaban = valor1b + valor2b + valor3b
-                    if somaban >= 10:
+                    if somaban >= 20:
+                        somaban -= 20
+                    elif somaban >= 10:
                         somaban -= 10
         elif somaban == 4:
                 if valor3jog == 2 or valor3jog == 3 or valor3jog == 4 or valor3jog == 5 or valor3jog == 6 or valor3jog == 7:
@@ -255,7 +263,9 @@ while valido_para_jogar:
                         valor3b = baralho52[f]
                     print("O seu valor é {0} ." .format(valor3b))
                     somaban = valor1b + valor2b + valor3b
-                    if somaban >= 10:
+                    if somaban >= 20:
+                        somaban -= 20
+                    elif somaban >= 10:
                         somaban -= 10
         elif somaban == 5:
                 if valor3jog == 4 or valor3jog == 5 or valor3jog == 6 or valor3jog == 7:
@@ -277,8 +287,12 @@ while valido_para_jogar:
                         valor3b = baralho52[f]
                     print("O seu valor é {0} ." .format(valor3b))
                     somaban = valor1b + valor2b + valor3b
-                    if somaban >= 10:
+                    if somaban >= 20:
+                        somaban -= 20
+                    elif somaban >= 10:
                         somaban -= 10
+        elif somaban >= 20:
+            somaban -= 20
         elif somaban >= 10:
             somaban -= 10
         #resultado da partida
@@ -351,10 +365,18 @@ while valido_para_jogar:
     #verifica se alguem zerou as fichas
     if 0 in fichas:
             valido_para_jogar = False
+    percorrer = 0
+    while percorrer<len(fichas):
+        if fichas[percorrer] <= 0:
+            fichas[percorrer] = 0
+            valido_para_jogar = False
+            break
+        percorrer += 1
     #pergunta se quer continuar jogando ou não:
-    continuar = input("Continuar o jogo? (sim ou não)")
-    if continuar == "não":
-        valido_para_jogar = False
+    if valido_para_jogar != False:
+        continuar = input("Continuar o jogo? (sim ou não)")
+        if continuar == "não":
+            valido_para_jogar = False
 
 
 
